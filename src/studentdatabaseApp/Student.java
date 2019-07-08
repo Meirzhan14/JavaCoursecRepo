@@ -61,4 +61,5 @@ public class Student {
         System.out.println("Thank you for your payment of $" + payment);
         viewBalance();
     }
+
 }
