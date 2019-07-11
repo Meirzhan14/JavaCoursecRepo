@@ -6,5 +6,6 @@ public class StudentDatabaseApp {
         student.enroll();
         student.viewBalance();
         student.payTuition(200);
+
     }
 }
