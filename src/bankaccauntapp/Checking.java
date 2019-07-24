@@ -3,17 +3,33 @@ package bankaccauntapp;
 public class Checking extends Accaunt{
 
     // List properties specific to checking accounts
-    int debitCardNumber;
-    int debitCardPIN;
+    private int debitCardNumber;
+    private int debitCardPIN;
 
     // Constructor to initialize settings checking account properties
 
     public Checking(String name, String sSN, double initDeposit) {
         super(name,sSN,initDeposit);
-        System.out.println("New checking account");
-
+        accountNumber = "2" + accountNumber;
+        setDebitCard();
     }
 
+    @Override
+    public void setRate() {
+        rate = getBaseRate()*.15;
+    }
+
+    private void setDebitCard(){
+        debitCardNumber = (int) (Math.random()*Math.pow(10,12));
+        debitCardPIN = (int) (Math.random()*Math.pow(10,4));
+    }
+
+    public void showInfo(){
+        super.showInfo();
+        System.out.println("YOUR CHECKING ACCOUNT FEATURES: " +
+                "\n Debit Card Number: " + debitCardNumber +
+        "\n Debit Card PIN: " + debitCardPIN);
+    }
 
 
 
